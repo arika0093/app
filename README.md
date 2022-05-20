@@ -1,4 +1,4 @@
-# flourio test applcation
+# frourio test applcation
 
 ## initialize(project create)
 ```sh
@@ -6,8 +6,19 @@ npx create-frourio-app
 ```
 ただしWSL環境だとうまく動作しないので、
 ```sh
-npx create-frourio-app --answers '{"dir":"flourio_app"}'
+npx create-frourio-app --answers '{"dir":"frourio_app"}'
 ```
+
+## init(google-cloud-sdk)
+```sh
+gcloud auth login --no-launch-browser
+gcloud projects create <project-id> --name <display-name>
+gcloud config set project <project-id>
+```
+
+
+
+## 
 
 ## edit default configurations
 編集する必要がありそうな箇所

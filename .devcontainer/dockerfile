@@ -1,0 +1,30 @@
+FROM node:16
+WORKDIR /app
+
+# install packages
+## google cloud sdk
+ARG GCLOUD_INSTALL_PATH='/usr/local/gcloud'
+ENV PATH $PATH:$GCLOUD_INSTALL_PATH/google-cloud-sdk/bin
+RUN curl -sSL https://sdk.cloud.google.com | bash -s -- --install-dir=$GCLOUD_INSTALL_PATH --disable-prompts
+
+# RUN apt update && \
+# 	apt install -y nodejs && \
+# 	rm -rf /var/lib/apt/lists/*
+
+# install dependencies (server side)
+COPY ./server/package.json ./server/
+RUN npm install --prefix server
+	  # chown -R node:node server/node_modules/
+
+# install dependencies (client side)
+COPY package.json ./
+RUN npm install
+	  # chown -R node:node node_modules/
+
+# copy source code
+COPY . .
+
+# exec application
+# USER root
+CMD ["npm", "run", "dev"]
+# CMD ["sh", "-c", "while :; do sleep 10; done"]

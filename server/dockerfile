@@ -1,12 +1,12 @@
 FROM node:16
-WORKDIR /app_client
+WORKDIR /app_server
 
 # install packages
 # RUN apt update && \
 # 	apt install -y nodejs && \
 # 	rm -rf /var/lib/apt/lists/*
 
-# install dependencies (client side)
+# install dependencies (server side)
 COPY ./package.json ./
 RUN npm install
 
@@ -14,4 +14,5 @@ RUN npm install
 COPY . .
 
 # exec application
-CMD ["npm", "run", "start:client"]
+CMD ["node", "index.js"]
+ 

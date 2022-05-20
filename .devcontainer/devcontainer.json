@@ -1,9 +1,10 @@
 {
-	"name": "flourio_app",
-    "dockerComposeFile": "../docker-compose.yml",
-    "service": "flourio_app",
+	"name": "frourio_dev",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "frourio_dev",
     "workspaceFolder": "/app",
     "shutdownAction": "stopCompose",
+    "remoteUser": "node",
     "extensions": [
         "dbaeumer.vscode-eslint",
         "prisma.prisma"
