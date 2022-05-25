@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "root"
+		},
+		{
+			"path": "./src/",
+			"name": "client"
+		},
+		{
+			"path": "./server/",
+			"name": "server"
+		},
+		{
+			"path": "./server/prisma",
+			"name": "database"
+		},
+	],
+	"settings": {
+		"typescript.tsdk": "node_modules/typescript/lib",
+		"eslint.run": "onSave",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true,
+			// auto-generated file/folder
+			"**/index.js": true,
+			"**/.next": true,
+			"**/$*": true,
+			// hidden because exist on workspace
+			"src/": true,
+			"server/": true,
+			"prisma/": true,
+			// my favorite
+			"node_modules/": true,
+		},
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true,
+	}
+}

@@ -12,19 +12,22 @@ services:
       - ..:/app:cached
       - ../server/node_modules:/app/server/node_modules:cached
       - ../node_modules:/app/node_modules:cached
+    depends_on:
+      - postgres_db
 
-  # postgres_db:
-  #   image: postgres:11
-  #   restart: always
-  #   environment:
-  #     POSTGRES_USER: mebee
-  #     POSTGRES_PASSWORD: password
-  #     PGPASSWORD: password123
-  #     POSTGRES_DB: sample
-  #   ports:
-  #     - 5432:5432
-  #   volumes:
-  #     - postgres:/var/lib/postgresql/data
+  postgres_db:
+    image: postgres:11
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: testdb
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+    
 
 volumes:
   postgres:

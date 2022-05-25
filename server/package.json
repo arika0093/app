@@ -2,6 +2,9 @@
   "name": "frourio-app-server",
   "version": "0.1.0",
   "private": true,
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "scripts": {
     "dev": "npm run migrate:dev && run-p dev:*",
     "dev:server": "node ./scripts/build.dev.js & node-dev --respawn index.js",
@@ -20,7 +23,7 @@
     "pm2:delete": "pm2 delete pm2.config.json",
     "pm2:logs": "pm2 logs",
     "pm2:monit": "pm2 monit",
-    "seed":"prisma db seed --preview-feature",
+    "seed":"prisma db seed",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
     "pstart": "cross-env NODE_ENV=production node index.js",
     "start": "node index.js"
@@ -37,12 +40,12 @@
     "dotenv": "^16.0.0",
     "fastify": "^3.27.1",
     "pm2": "^5.1.2",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "cross-env": "^7.0.3"
   },
   "devDependencies": {
     "@types/busboy": "^1.3.0",
     "@types/jest": "^27.4.0",
-    "cross-env": "^7.0.3",
     "esbuild": "^0.14.19",
     "esbuild-node-externals": "^1.4.1",
     "frourio": "^0.29.0",

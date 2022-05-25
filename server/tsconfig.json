@@ -5,7 +5,7 @@
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "lib": ["dom"],
-    "module": "esnext",
+    // "module": "esnext",
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {

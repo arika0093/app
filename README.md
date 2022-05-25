@@ -16,8 +16,6 @@ gcloud projects create <project-id> --name <display-name>
 gcloud config set project <project-id>
 ```
 
-
-
 ## 
 
 ## edit default configurations
